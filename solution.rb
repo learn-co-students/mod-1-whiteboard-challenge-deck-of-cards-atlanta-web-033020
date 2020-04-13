@@ -3,12 +3,12 @@ class Deck
 
   def initialize
     @cards = []
-    values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
     suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
+    ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
-    values.each do |v|
-      suits.each do |s|
-        cards << Card.new(v, s)
+    suits.each do |s|
+      ranks.each do |r|
+        cards << Card.new(s, r)
       end
     end
   end
