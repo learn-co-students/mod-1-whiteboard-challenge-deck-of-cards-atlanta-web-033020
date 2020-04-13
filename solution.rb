@@ -1,32 +1,28 @@
-require 'pry'
-
 class Deck
-  attr_reader :card_array
+  attr_reader :cards
 
   def initialize
-    @card_array = []
+    @cards = []
     values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
     suits = ["Hearts", "Clubs", "Diamonds", "Spades"]
 
     values.each do |v|
       suits.each do |s|
-        card_array << Card.new(v, s)
+        cards << Card.new(v, s)
       end
     end
   end
 
   def choose_card
-    card_array.delete(card_array.sample)
+    cards.delete(cards.sample)
   end
 end
 
 class Card
-  attr_reader :value, :suit
+  attr_reader :suit, :rank
 
-  def initialize(value, suit)
-    @value = value
+  def initialize(suit, rank)
     @suit = suit
+    @rank = rank
   end
 end
-
-binding.pry
